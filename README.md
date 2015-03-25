@@ -1,3 +1,5 @@
+This fork of the rapidfire repository is intended to allow users to own surveys.
+
 # Rapidfire
 [![Code Climate](https://codeclimate.com/repos/51a70089f3ea000534070811/badges/aedc90c3b5481e7569bb/gpa.png)](https://codeclimate.com/repos/51a70089f3ea000534070811/feed)
 [![Build Status](https://travis-ci.org/code-mancers/rapidfire.png?branch=master)](https://travis-ci.org/code-mancers/rapidfire)
