@@ -10,5 +10,10 @@ module Rapidfire
       answers = answer.answer_text.to_s.split(answers_delimiter)
       answers.include?(option)
     end
+    
+    def get_qg_collection_helper
+      @question_groups = QuestionGroup.all
+    end
+    
   end
 end
