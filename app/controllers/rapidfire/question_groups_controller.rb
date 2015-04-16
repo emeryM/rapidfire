@@ -4,6 +4,7 @@ module Rapidfire
 
     def index
       @question_groups = QuestionGroup.all
+      @word = "hello"
     end
 
     def new
@@ -50,7 +51,7 @@ module Rapidfire
     private
     def question_group_params
       if Rails::VERSION::MAJOR == 4
-        params.require(:question_group).permit(:name)
+        params.require(:question_group).permit(:name, :owner)
       else
         params[:question_group]
       end

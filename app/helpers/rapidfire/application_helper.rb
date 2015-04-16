@@ -11,9 +11,5 @@ module Rapidfire
       answers.include?(option)
     end
     
-    def get_qg_collection_helper
-      @question_groups = QuestionGroup.all
-    end
-    
   end
 end
