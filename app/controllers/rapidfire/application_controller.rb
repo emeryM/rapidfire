@@ -1,4 +1,5 @@
 module Rapidfire
+  require 'csv'
   class ApplicationController < ::ApplicationController
     helper_method :can_administer?
 

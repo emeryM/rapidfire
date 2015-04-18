@@ -43,6 +43,10 @@ module Rapidfire
       respond_to do |format|
         format.json { render json: @question_group_results, root: false }
         format.html
+        format.csv do
+          headers['Content-Disposition'] = "attachment; filename=\"results\""
+          headers['Content-Type'] ||= 'text/csv'
+        end
         format.js
       end
     end
