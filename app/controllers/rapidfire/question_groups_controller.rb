@@ -4,7 +4,6 @@ module Rapidfire
 
     def index
       @question_groups = QuestionGroup.all
-      @word = "hello"
     end
 
     def new
