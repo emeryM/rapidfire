@@ -25,6 +25,12 @@ module Rapidfire
       end
     end
 
+    def publish
+      @question_group = QuestionGroup.find(params[:id])
+      @question_group.published = true
+      @question_group.save
+    end
+
     def destroy
       @question_group = QuestionGroup.find(params[:id])
       @question_group.destroy
@@ -34,13 +40,6 @@ module Rapidfire
         format.js
       end
     end
-
-    def update
-      @question_group = QuestionGroup.find(params[:id])
-      @question_group.published = true
-      @question_group.save
-    end
-
 
     def results
       @question_group = QuestionGroup.find(params[:id])
