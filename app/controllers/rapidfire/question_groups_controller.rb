@@ -35,7 +35,7 @@ module Rapidfire
       end
     end
 
-    def publish
+    def update
       @question_group = QuestionGroup.find(params[:id])
       @question_group.published = true
       @question_group.save
