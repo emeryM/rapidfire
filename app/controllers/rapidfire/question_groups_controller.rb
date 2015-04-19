@@ -6,8 +6,6 @@ module Rapidfire
       @question_groups = QuestionGroup.all
     end
 
-
-
     def new
       @question_group = QuestionGroup.new
     end
@@ -44,10 +42,7 @@ module Rapidfire
       redirect_to "/surveys"
     end
 
-
     def results
-      @participant = 'survey.chomp.mailer@gmail.com'
-      SharingMailer.share_email(@participant).deliver_now
       @question_group = QuestionGroup.find(params[:id])
       @question_group_results =
         QuestionGroupResults.new(question_group: @question_group).extract
@@ -57,6 +52,11 @@ module Rapidfire
         format.html
         format.js
       end
+    end
+
+    def share
+      @participant = 'survey.chomp.mailer@gmail.com'
+      SharingMailer.share_email(@participant).deliver_now
     end
 
     private
