@@ -39,6 +39,7 @@ module Rapidfire
       @question_group = QuestionGroup.find(params[:id])
       @question_group.published = true
       @question_group.save
+      redirect_to "/surveys"
     end
 
 
