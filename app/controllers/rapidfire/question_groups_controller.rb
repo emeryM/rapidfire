@@ -54,9 +54,12 @@ module Rapidfire
       end
     end
 
-    def share
-      @participant = 'survey.chomp.mailer@gmail.com'
-      SharingMailer.share_email(@participant).deliver_now
+    def send_share_mail(participants, survey_owner, survey_link)
+      @survey_owner = survey_owner
+      @survey_link = survey_link
+      @participants = participants.split(',')
+      SharingMailer.share_email(@participants, @survey_owner, @survey_link).deliver
+      redirect_to "/surveys"
     end
 
     private
