@@ -54,18 +54,10 @@ module Rapidfire
       end
     end
 
-    def send_share_mail(participants, survey_owner, survey_link)
-      @survey_owner = QuestionGroup.find(params[:survey_owner])
-      @survey_link = QuestionGroup.find(params[:survey_link])
-      @participants = QuestionGroup.find(params[:participants]).split(',')
-      SharingMailer.share_email(@participants, @survey_owner, @survey_link).deliver_now
-      redirect_to "/surveys"
-    end
-
     private
     def question_group_params
       if Rails::VERSION::MAJOR == 4
-        params.require(:question_group).permit(:name, :owner, :published, :participants, :survey_owner, :survey_link)
+        params.require(:question_group).permit(:name, :owner, :published)
       else
         params[:question_group]
       end
