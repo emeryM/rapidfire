@@ -54,7 +54,7 @@ module Rapidfire
       end
     end
 
-    def send_share_mail
+    def send_share_mail(participants, survey_owner, survey_link)
       @survey_owner = QuestionGroup.find(params[:survey_owner])
       @survey_link = QuestionGroup.find(params[:survey_link])
       @participants = QuestionGroup.find(params[:participants]).split(',')
@@ -65,7 +65,7 @@ module Rapidfire
     private
     def question_group_params
       if Rails::VERSION::MAJOR == 4
-        params.require(:question_group).permit(:name, :owner, :published)
+        params.require(:question_group).permit(:name, :owner, :published, :participants, :survey_owner, :survey_link)
       else
         params[:question_group]
       end
