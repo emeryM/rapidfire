@@ -54,8 +54,8 @@ module Rapidfire
       end
     end
 
-    def send_share_email
-      @survey_owner = "test"
+    def send_share_email(survey_owner)
+      @survey_owner = survey_owner
       @survey_link = "test"
       @participants = "morgan.a.emery@gmail.com".split(',')
       SharingMailer.share_email(@participants, @survey_owner, @survey_link).deliver_now
