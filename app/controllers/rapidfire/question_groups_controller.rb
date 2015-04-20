@@ -54,6 +54,14 @@ module Rapidfire
       end
     end
 
+    def send_share_email
+      @survey_owner = "test"
+      @survey_link = "test"
+      @participants = "morgan.a.emery@gmail.com".split(',')
+      SharingMailer.share_email(@participants, @survey_owner, @survey_link).deliver_now
+      redirect_to "/surveys"
+    end
+
     private
     def question_group_params
       if Rails::VERSION::MAJOR == 4
