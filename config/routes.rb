@@ -6,5 +6,7 @@ Rapidfire::Engine.routes.draw do
     resources :answer_groups, only: [:new, :create]
   end
 
+  get 'send_share_mail', to: 'question_groups#send_share_mail'
+
   root :to => "question_groups#index"
 end

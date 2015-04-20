@@ -58,7 +58,7 @@ module Rapidfire
       @survey_owner = survey_owner
       @survey_link = survey_link
       @participants = participants.split(',')
-      SharingMailer.share_email(@participants, @survey_owner, @survey_link).deliver
+      SharingMailer.share_email(@participants, @survey_owner, @survey_link).deliver_now
       redirect_to "/surveys"
     end
 
