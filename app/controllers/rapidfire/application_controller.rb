@@ -1,5 +1,8 @@
 module Rapidfire
   class ApplicationController < ::ApplicationController
+
+    require 'csv'
+    
     helper_method :can_administer?
 
     def authenticate_administrator!
