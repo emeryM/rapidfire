@@ -10,6 +10,4 @@ Rapidfire::Engine.routes.draw do
 
   root :to => "question_groups#index"
 
-  post 'send_share_email', :to => 'question_groups#send_share_email', :as => 'send_share_email'
-
 end
