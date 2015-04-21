@@ -1,6 +1,5 @@
 Rapidfire::Engine.routes.draw do
 
-  get '/send_share_email/:survey_owner', to: 'question_groups#send_share_email'
 
   resources :question_groups do
     get 'results', on: :member
@@ -10,4 +9,7 @@ Rapidfire::Engine.routes.draw do
   end
 
   root :to => "question_groups#index"
+
+  post 'send_share_email', :to => 'question_groups#send_share_email', :as => 'send_share_email'
+
 end
